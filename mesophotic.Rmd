@@ -12,19 +12,21 @@ library(FSA)
 library(nlstools)
 library(nmfspalette)
 
-selected.surv.clean <- read.csv("selected_surv_clean.csv", header=TRUE)
+selected.surv.clean <- read.csv("example from Ricky/selected_surv_clean.csv", header=TRUE)
 head(selected.surv.clean)
 
 PSHA <- read.csv("PSHA_20230824.csv", header=TRUE)
-head(PSHA)
+PSHA
 
 ```
 
-## R Markdown
+## Look at data
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r setup, include=FALSE}
+plot(TL~Age, data=PSHA)
+hist(PSHA$Age)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```
 
 ```{r, echo=FALSE}
 #assuming there are at least 5 unique ages in dataset...
